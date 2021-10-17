@@ -39,9 +39,9 @@
   .first-page header {
     position: relative;
     align-items: flex-start;
-    margin-top: 7em;
-    margin-bottom: 3em;
-    min-height: 15%;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    min-height: 10%;
   }
   .first-page header .right-position > button,
   .first-page header .left-position .nav-bar {
