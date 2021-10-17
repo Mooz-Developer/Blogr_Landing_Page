@@ -1,0 +1,387 @@
+/* Start Global Rules */
+:root {
+  --primary-color-1: hsl(353, 100%, 62%);
+  --primary-color-2: hsl(13, 100%, 72%);
+  --primary-color-3: #fff;
+
+  --secondry-color-1: #ff7b86;
+  --hedding-title: hsl(208, 49%, 24%);
+
+  --main-transition: 0.3s;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Overpass, Ubuntu, Arial;
+  background-color: #fafafa;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #fafafa;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color-1);
+}
+
+.container {
+  padding: 100px 8% !important;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 1.2em;
+  padding: 15px 40px;
+  border-radius: 1000px;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/* End Global Rules */
+
+/* Start Landing Page Styling */
+.first-page {
+  min-height: 500px;
+  background: url("images/bg-pattern-intro.svg"),
+    linear-gradient(to right, var(--primary-color-2), var(--primary-color-1));
+  background-repeat: no-repeat, repeat;
+  background-position: -400px 50%, 0 0;
+  color: var(--primary-color-3);
+
+  border-bottom-left-radius: 10% 18%;
+}
+.first-page header {
+  width: 100%;
+  min-height: 30%;
+  padding-bottom: 5%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* nav bars */
+.first-page header .left-position {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.first-page header .left-position .nav-bar {
+  display: inline-block;
+  margin-left: 30px;
+}
+.first-page header .left-position .nav-bar > li {
+  position: relative;
+  display: inline-block;
+  margin-left: 10px;
+  margin-top: 10px;
+
+  text-align: center;
+  width: 100px;
+  font-weight: 300;
+  cursor: pointer;
+}
+.first-page header .left-position .nav-bar > li .nav-list {
+  position: absolute;
+  top: 150%;
+  left: 0;
+  max-height: 0;
+  height: auto;
+
+  background-color: #ffffffcf;
+  overflow: hidden;
+  width: 100%;
+  background-image: linear-gradient(to right, #333, #333);
+  background-repeat: no-repeat;
+  background-size: 100% 3px;
+  background-position: top center;
+  transition: max-height 1s linear;
+}
+.first-page header .left-position .nav-bar > li:hover .nav-list {
+  max-height: 1000px;
+  border-width: 3px;
+}
+.first-page header .left-position .nav-bar > li .nav-list a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  line-height: 2;
+}
+.first-page header .left-position .nav-bar > li .nav-list a:first-child {
+  padding-top: 15px;
+}
+.first-page header .left-position .nav-bar > li .nav-list a:last-child {
+  padding-bottom: 5px;
+}
+.first-page header .left-position .nav-bar > li .nav-list a:hover {
+  color: #000;
+  font-weight: 700;
+}
+
+/* nav list for responsive*/
+.first-page header .right-position > img {
+  display: none;
+}
+.first-page header .right-position > img.open + ul {
+  display: block;
+}
+.first-page header .right-position .responsive-nav-bar {
+  display: none;
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  right: 50%;
+  transform: translateX(50%);
+  background-color: #fff;
+
+  width: 80%;
+  border-radius: 8px;
+  padding: 0 20px;
+  box-shadow: 0 50px 50px -50px #1119;
+}
+.first-page header .right-position .responsive-nav-bar > li {
+  font-size: 2.5em;
+  font-weight: 700;
+  line-height: 3;
+  padding: 10px;
+  color: var(--hedding-title);
+}
+.first-page header .right-position .responsive-nav-bar li img {
+  display: inline-block;
+  margin: 0;
+  width: 15%;
+  max-width: 30px;
+}
+.first-page header .right-position .responsive-nav-bar > li ul {
+  max-height: 0;
+  height: auto;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: 0.6s;
+
+  font-size: 0.7em;
+  font-weight: 700;
+  line-height: 2.2;
+  background-color: #fafafa;
+}
+.first-page header .right-position .responsive-nav-bar > li ul li:hover {
+  text-decoration: underline;
+}
+.first-page header .right-position .responsive-nav-bar > li:hover ul {
+  max-height: fit-content;
+  padding: 20px 0;
+}
+/* responsive nav buttons */
+.first-page header .right-position .responsive-nav-bar > li button.secondry {
+  font-size: 0.9em;
+  font-weight: 700;
+  color: var(--hedding-title);
+}
+.first-page header .right-position .responsive-nav-bar > li button.main {
+  background: linear-gradient(
+    to bottom right,
+    var(--primary-color-2),
+    var(--primary-color-1)
+  );
+  font-size: 0.9em;
+  color: #fff;
+}
+
+/* Buttons Style */
+button.main {
+  color: var(--primary-color-1);
+  background-color: #fff;
+  font-weight: 700;
+}
+button.main:hover {
+  background-color: var(--secondry-color-1);
+  color: var(--primary-color-3);
+}
+button.secondry {
+  color: var(--primary-color-3);
+}
+
+/* Landing Area Style */
+.first-page .landing {
+  width: 100%;
+  min-height: 350px;
+  max-height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.first-page .landing h1 {
+  font-size: 4em;
+  margin-bottom: 0.1em;
+}
+.first-page .landing p {
+  margin-bottom: 2em;
+}
+.first-page .landing .buttons :last-child {
+  border: solid 1px var(--primary-color-3);
+  font-weight: 700;
+  margin-left: 20px;
+}
+.first-page .landing .buttons :last-child:hover {
+  background-color: var(--primary-color-3);
+  color: var(--primary-color-1);
+}
+/* End Landing Page Styling */
+
+/* Start Second Page Styling */
+/* main flex style */
+.second-page {
+  min-height: 800px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.second-page > h1 {
+  color: var(--hedding-title);
+  position: absolute;
+  top: 100px;
+  font-size: 2em;
+  font-weight: 700;
+}
+.second-page .column {
+  flex: 1 0;
+}
+.second-page .column:last-child {
+  margin-left: 80px;
+}
+.second-page .column img {
+  max-width: 400%;
+}
+/* articles flex style */
+.second-page .articles-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.second-page .articles-container article h2 {
+  color: var(--hedding-title);
+  margin-bottom: 15px;
+}
+.second-page .articles-container article p {
+  color: #333;
+  line-height: 1.6;
+}
+.second-page .articles-container article:first-child {
+  margin-bottom: 30px;
+}
+/* End Second Page Styling */
+
+/* Start Third Page (Phones Page) Styling */
+.third-page {
+  padding: 60px 0 !important;
+  display: flex;
+  align-items: center;
+  background-image: url("images/bg-pattern-circles.svg"),
+    linear-gradient(to right, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+  background-position: -50% 100%, 0 0;
+  background-repeat: no-repeat;
+  border-radius: 0 100px;
+}
+.third-page .phones {
+  margin: -120px 0 -170px;
+}
+.third-page article {
+  margin-left: 50px;
+  color: var(--primary-color-3);
+}
+.third-page article h2 {
+  margin-bottom: 15px;
+  font-size: 2em;
+}
+.third-page article p {
+  color: hsl(240, 3%, 79%);
+  line-height: 1.4;
+  font-size: 1.2em;
+}
+/* End Third Page (Phones Page) Styling */
+
+/* Start Fourth Page (Laptop Page) Styling */
+.fourth-page {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+}
+.fourth-page .column {
+  flex: 1 0;
+}
+.fourth-page .column:first-child {
+  margin-left: -400px;
+  margin-right: 400px;
+}
+.fourth-page .column img {
+  max-width: 200%;
+}
+/* articles flex style */
+.fourth-page .articles-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.fourth-page .articles-container article h2 {
+  font-size: 2em;
+  color: var(--hedding-title);
+  margin-bottom: 15px;
+}
+.fourth-page .articles-container article p {
+  color: #333;
+  line-height: 1.6;
+}
+.fourth-page .articles-container article:first-child {
+  margin-bottom: 50px;
+}
+/* End Fourth Page Styling */
+
+/* Start Footer Styling */
+footer {
+  background-color: hsl(240, 10%, 16%);
+  border-top-right-radius: 8% 24%;
+  color: var(--primary-color-3);
+  position: relative;
+}
+footer > ul {
+  display: flex;
+  flex-direction: row;
+}
+footer > ul > li {
+  margin: 0 auto;
+  line-height: 2;
+  font-size: 1.3em;
+  font-weight: 700;
+}
+footer ul li .nav-list a {
+  line-height: 2.5;
+  text-decoration: none;
+  color: hsl(240, 3%, 79%);
+  font-weight: 400;
+  font-size: 0.7em;
+}
+footer ul li .nav-list a:hover {
+  text-decoration: underline;
+}
+/* End Footer Styling */
