@@ -231,6 +231,7 @@ button.secondry {
 .first-page .landing h1 {
   font-size: 4em;
   margin-bottom: 0.1em;
+  text-align: center;
 }
 .first-page .landing p {
   margin-bottom: 2em;
