@@ -33,6 +33,7 @@
     text-align: center;
     border-bottom-left-radius: 35% 30%;
     background-size: 300%, 100%;
+    padding: 1px 8% 100px!important;
   }
   /* header */
   .first-page header {
